@@ -3,11 +3,14 @@ def analyze(text):
     
     
     for x in text.split():
+        x = x.lower()
         seen[x] = seen.get(x, 0) + 1
+        
     best = ''
     for x in seen:
-        if len(x) > len(best):
+        if (len(x) > len(best)) or (len(x) == len(best) and x < best):
             best = x
+
     unique_only = {x for x, count in seen.items() if count == 1}
     return {
         'total_words': len(text.split()),
