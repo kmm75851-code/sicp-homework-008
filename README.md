@@ -127,7 +127,7 @@ track()     # → (2, 9)  ← без аргумента, просто смотр
 
 ---
 
-### `make_two_way_counter()`
+### ``
 
 Счётчик, который умеет считать вверх и вниз.
 Возвращает кортеж `(up, down, value)`:
@@ -283,6 +283,7 @@ char_frequency("")
 Принимает словарь `{id: текст}`.
 
 ```python
+
 docs = {
     1: "the cat sat",
     2: "the cat on the mat",
@@ -331,6 +332,7 @@ unique_words("Hello hello HELLO")
 common_words("the cat sat", "the dog sat")
 # → {'the', 'sat'}
 
+
 common_words("hello world", "foo bar")
 # → set()
 ```
@@ -372,6 +374,7 @@ dedup_preserve_order([])                     # → []
 anagram_groups(["eat", "tea", "tan", "ate", "nat", "bat"])
 # → [['ate', 'eat', 'tea'], ['bat'], ['nat', 'tan']]
 # (порядок групп не важен)
+
 
 anagram_groups(["abc", "bca", "xyz"])
 # → [['abc', 'bca'], ['xyz']]
@@ -419,6 +422,10 @@ set_stats([1, 2, 3])
 result = analyze("the cat sat on the mat the cat")
 
 result == {
+    seen = {}
+    
+    
+    for x in items:
     'total_words': 8,
     'unique_words': 5,                     # {'the', 'cat', 'sat', 'on', 'mat'}
     'word_counts': {                       # все слова и частота

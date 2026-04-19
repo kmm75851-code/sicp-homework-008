@@ -19,5 +19,5 @@ def analyze(text):
         'appears_once': unique_only,
     }
 
-def make_analyzer():
-    pass
+result = analyze("the cat sat on the mat the cat")
+print(result)
