@@ -42,6 +42,7 @@ def most_common(text, n):
         return []
 
     sorted_words = sorted(freq.items(), key=lambda x: (-x[1], x[0]))
+
     return [word for word, _ in sorted_words[:n]]
 
 def two_sum(nums, target):
@@ -55,7 +56,7 @@ def two_sum(nums, target):
 
         seen[num] = i
 
-        
+
 def char_frequency(s):
     count = {}
     for ch in s:
@@ -68,4 +69,4 @@ def index_builder(documents):
     for x, y in documents.items():
         for i in y.split(): 
             count.setdefault(i, set()).add(x)
-    return count
+    return count  
